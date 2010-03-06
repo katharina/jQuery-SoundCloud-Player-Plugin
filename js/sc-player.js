@@ -21,7 +21,7 @@
   };
   
   var engineId = 'scPlayerEngine',
-      domain = 'sandbox-soundcloud.com', // 'soundcloud.com'
+      domain = 'soundcloud.com', // 'soundcloud.com'
       audioHtml = function(url) {
             return '<object height="1" width="1" id="' + engineId + '" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"><param name="movie" value="http://player.' + domain +'/player.swf?url=' + url +'&amp;enable_api=true&amp;player_type=tiny&amp;object_id=' + engineId + '"></param><param name="allowscriptaccess" value="always"></param><embed allowscriptaccess="always" height="1" src="http://player.' + domain +'/player.swf?url=' + url +'&amp;enable_api=true&amp;player_type=tiny&amp;object_id=' + engineId + '" type="application/x-shockwave-flash" width="1" name="' + engineId + '"></embed></object>';
           },
@@ -212,7 +212,7 @@
           var tracks = event.playerObj.tracks;
           $.each(tracks, function(index, track) {
             var active = index === 0;
-            $('<li>' + track.title + ', ' + timecode(track.duration) + '</li>').data('sc-track', {id:index}).toggleClass('active', active).appendTo($list);
+            $('<li>' + track.title + ', ' + timecode(track.duration) + '<a href="" class="buy">buy</a></li>').data('sc-track', {id:index}).toggleClass('active', active).appendTo($list);
             if(opts.loadArtworks){
               var img = track.artwork_url ? '<img src="' + track.artwork_url.replace('-large', '-t300x300') + '"/>' : '<div class="sc-no-artwork">No Artwork</div>';
               $('<li>' + img +'</li>').appendTo($artworks).toggleClass('active', active);

@@ -1,12 +1,69 @@
-.sc-player{
-  width: 540px;
-  height: 270px;
-  border: 1px solid #000;
+body {
+  background-image: url("../css/bg.jpg");
+  font: 13px georgia, serif;
+}
+
+a {
+  text-decoration: none;
+  color: #443258;
+}
+
+.authenticated {
+  color: #443258;
+}
+
+.container {
+  width: 700px;
+  height: 550px;
   position: relative;
-  font: 12px Arial, sans-serif;
-  background-color: #333;
-  color: #eee;
+  font: 12px georgia, serif;
+  background-color: #92b686;
+  color: #000;
+  padding: 10px;
+  margin: 300px auto 0 auto;
   margin-bottom: 20px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  
+}
+
+.container .info {
+  position: absolute;
+  left: 330px;
+  top: 10px;
+}
+
+.container .info h3 {
+  font-weight: normal;
+  font-size: 18px;
+  font-style: italic;
+  margin: 5px 0 0 0;
+}
+
+.container .info h4 {
+  font-weight: normal;
+  font-size: 15px;
+  margin: 7px 0 0 0;
+}
+
+.container .info .buy {
+  margin: 10px 0 0 0;
+}
+
+.container .info .buy a {
+  display: block;
+  width: 100px;
+  background: #eee;
+  border: 1px solid #ccc;
+  text-align: center;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 7px;
+}
+
+.container .info h4 span{
+  font-style: italic;
 }
 
 .sc-player ol, .sc-player li{
@@ -16,28 +73,27 @@
 }
 
 /* Artworks */
-.sc-player .sc-artwork-list{
-  width: 50%;
+.sc-player .sc-artwork-list {
+  width: 300px;
   height: 100%;
-  background-color: #00aa00;
   list-style-type: none;
   position: relative;
 }
 
-.sc-player .sc-artwork-list li{
+.sc-player .sc-artwork-list li {
   list-style-type: none;
   display: none;
 }
 
-.sc-player .sc-artwork-list li.active{
+.sc-player .sc-artwork-list li.active {
   list-style-type: none;
   display: block;
 }
 
 .sc-player .sc-artwork-list li img, .sc-player .sc-artwork-list li div{
   list-style-type: none;
-  width: 100%;
-  height: 100%;
+  width: 300px;
+  height: 300px;
 }
 
 /* controls */
@@ -47,25 +103,33 @@
   position: absolute;
   width: 50px;
   height: 50px;
-  margin-left: -25px;
+  margin-left: -50px;
   margin-top: -25px;
-  top: 50%;
+  top: 160px;
   left: 25%;
-  background-color: blue;
 }
 
 .sc-player .sc-controls a{
   display: block;
   width: 50px;
   height: 50px;
+  background: transparent url("../css/button.png") -5px -5px no-repeat;
+  text-indent: -9999px;
+  outline: 0;
+}
+
+.sc-player .sc-controls a:hover {
+  background: transparent url("../css/button.png") -64px -5px no-repeat;
 }
 
 .sc-player .sc-controls a.sc-pause{
   display: none;
+  background: transparent url("../css/button.png") -5px -70px no-repeat;
 }
 
 .sc-player.playing .sc-controls a.sc-play{
   display: none;
+
 }
 
 .sc-player.playing .sc-controls a.sc-pause{
@@ -116,16 +180,33 @@
 /* Track listings*/
 .sc-player ol.sc-trackslist{
   position: absolute;
-  width: 50%;
+  width: 410px;
   height: 100%;
-  top: 0;
-  left: 50%;
+  top: 100px;
+  left: 310px;
   overflow: auto;
 }
 
 .sc-player ol.sc-trackslist li{
   cursor: pointer;
-  margin: 5px 20px;
+  margin: 0px 20px;
+  padding: 5px 5px 5px 5px;
+  position: relative;
+  border-bottom: 1px solid #fff;
+}
+
+.sc-player ol.sc-trackslist li a.buy {
+  position: absolute !important; 
+  right: 0;
+  width: 50px;
+  background: #eee;
+  border: 1px solid #ccc;
+  text-align: center;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 7px;
+  text-decoration: none;
+  color: #333;
 }
 
 .sc-player ol.sc-trackslist li:hover, .sc-player.playing ol.sc-trackslist li.active{
@@ -159,6 +240,7 @@
   position: absolute;
   top: 10px;
   left: 20px;
+  display: none;
 }
 
 .sc-player .sc-info-toggle.active{

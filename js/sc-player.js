@@ -90,7 +90,7 @@
         $('.sc-info', $player).each(function(index) {
           console.log('updateTrackInfo', track);
           $('h3', this).html('<a href="' + track.permalink_url +'">' + track.title + '</a>');
-          $('h4', this).html('by <a href="' + track.user.permalink_url +'">' + track.user.username + '</a>');
+          $('h4', this).html('by <a href="' + track.user.permalink_url +'">' + track.user.username + '</a> ');
           $('p', this).html(track.description || 'no Description');
         });
         updates = {$buffer: $('.sc-buffer', $player), $played: $('.sc-played', $player), position:  $('.sc-position', $player)[0],  duration: $('.sc-duration', $player)[0]};
@@ -227,7 +227,7 @@
           var tracks = event.playerObj.tracks;
           $.each(tracks, function(index, track) {
             var active = index === 0;
-            $('<li>' + track.title + ', <span class="sc-track-duration">' + timecode(track.duration) + '</span></li>').data('sc-track', {id:index}).toggleClass('active', active).appendTo($list);
+            $('<li><span class="title">' + track.title + '</span>, <span class="sc-track-duration">' + timecode(track.duration) + '</span><span class="buy"><a class="" title="Add to Play-O"></a></span></li>').data('sc-track', {id:index}).toggleClass('active', active).appendTo($list);
             if(opts.loadArtworks){
               var img = track.artwork_url ? '<img src="' + track.artwork_url.replace('-large', '-t300x300') + '"/>' : '<div class="sc-no-artwork">No Artwork</div>';
               $('<li>' + img +'</li>').appendTo($artworks).toggleClass('active', active);

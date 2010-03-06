@@ -1,31 +1,48 @@
 body {
   background-image: url("../css/bg.jpg");
   font: 13px georgia, serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 a {
   text-decoration: none;
-  color: #443258;
+  color: #000;
 }
 
-.authenticated {
-  color: #443258;
+.header {
+  background: #333;
+  font-size: 21px;
+  padding: 5px 0 5px 20px;
+  -webkit-box-shadow: 3px 3px 4px rgba(0,0,0,0.2);
+  -moz-box-shadow: 3px 3px 4px rgba(0,0,0,0.2);
+  color: #fff;
 }
 
 .container {
   width: 700px;
-  height: 550px;
+  height: 300px;
   position: relative;
   font: 12px georgia, serif;
-  background-color: #92b686;
+  background-color: #bcffbc;
   color: #000;
   padding: 10px;
-  margin: 300px auto 0 auto;
+  margin: 20px auto 20px auto;
   margin-bottom: 20px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  -webkit-border-radius: 2px;
-  
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -webkit-box-shadow: 3px 3px 4px rgba(0,0,0,0.2);
+  -moz-box-shadow: 3px 3px 4px rgba(0,0,0,0.2);
+}
+
+.container.xiuxiu {
+  background: #ffbce3;
+}
+
+.container.forss {
+  background: #bcebff;
 }
 
 .container .info {
@@ -44,22 +61,35 @@ a {
 .container .info h4 {
   font-weight: normal;
   font-size: 15px;
+  margin: 4px 0 0 0;
+}
+
+.buy {
   margin: 7px 0 0 0;
-}
-
-.container .info .buy {
-  margin: 10px 0 0 0;
-}
-
-.container .info .buy a {
   display: block;
-  width: 100px;
-  background: #eee;
-  border: 1px solid #ccc;
+  width: 90px;
+  background: #333;
+  padding: 1px 10px;
+  border: 1px solid #000;
+  background: transparent url("../css/buy-bg.png") 0 0 repeat-x;
   text-align: center;
   -moz-border-radius: 10px;
   border-radius: 10px;
   -webkit-border-radius: 7px;
+}
+
+li .buy {
+  position: absolute;
+  right: 3px;
+  top: -3px;
+  width: 0px;
+  padding: 1px 13px 1px 5px;
+}
+  
+.buy a {
+  background: transparent url("../css/note.png") 0 0 no-repeat;
+  padding-left: 13px;
+  color: #fff;
 }
 
 .container .info h4 span{
@@ -113,21 +143,26 @@ a {
   display: block;
   width: 50px;
   height: 50px;
-  background: transparent url("../css/button.png") -5px -5px no-repeat;
+  background: transparent url("../css/buttons-grey.png") -5px -4px no-repeat;
   text-indent: -9999px;
   outline: 0;
 }
 
 .sc-player .sc-controls a:hover {
-  background: transparent url("../css/button.png") -64px -5px no-repeat;
+  background: transparent url("../css/buttons-grey.png") -64px -4px no-repeat;
 }
 
 .sc-player .sc-controls a.sc-pause{
   display: none;
-  background: transparent url("../css/button.png") -5px -70px no-repeat;
+  background: transparent url("../css/buttons-grey.png") -5px -70px no-repeat;
 }
 
-.sc-player.playing .sc-controls a.sc-play{
+.sc-player .sc-controls a.sc-pause:hover {
+  display: none;
+  background: transparent url("../css/buttons-grey.png") -64px -70px no-repeat;
+}
+
+.sc-player.playing .sc-controls a.sc-play {
   display: none;
 
 }
@@ -178,10 +213,10 @@ a {
 
 
 /* Track listings*/
-.sc-player ol.sc-trackslist{
+.sc-player ol.sc-trackslist {
   position: absolute;
-  width: 410px;
-  height: 450px;
+  width: 400px;
+  height: 200px;
   top: 100px;
   left: 310px;
   overflow: auto;
@@ -189,10 +224,14 @@ a {
 
 .sc-player ol.sc-trackslist li{
   cursor: pointer;
-  margin: 0px 20px;
+  margin: 0 5px 0 20px;
   padding: 5px 5px 5px 5px;
   position: relative;
   border-bottom: 1px solid #fff;
+}
+
+.sc-player ol.sc-trackslist li .title {
+  font-weight: bold;
 }
 
 .sc-player ol.sc-trackslist li a.buy {
@@ -210,11 +249,11 @@ a {
 }
 
 .sc-player ol.sc-trackslist li:hover, .sc-player.playing ol.sc-trackslist li.active{
-  background-color: #ff6600;
+  background-color: #fff;
 }
 
 .sc-player ol.sc-trackslist li.active{
-  background-color: #ffbb00;
+  background-color: #fff;
 }
 
 /* Track info*/

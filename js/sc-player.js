@@ -1,4 +1,4 @@
-;(function($) {
+(function($) {
   // Convert milliseconds into Hours (h), Minutes (m), and Seconds (s)
   var timecode = function(ms) {
     var hms = function(ms) {
@@ -21,11 +21,7 @@
   };
   
   var engineId = 'scPlayerEngine',
-<<<<<<< HEAD:js/sc-player.js
       domain = 'soundcloud.com', // 'soundcloud.com'
-=======
-      domain = 'soundcloud.com', // 'sandbox-soundcloud.com'
->>>>>>> b6ba514117b36af009b43cee987c7d2c55ff8524:js/sc-player.js
       audioHtml = function(url) {
             return '<object height="1" width="1" id="' + engineId + '" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"><param name="movie" value="http://player.' + domain +'/player.swf?url=' + url +'&amp;enable_api=true&amp;player_type=tiny&amp;object_id=' + engineId + '"></param><param name="allowscriptaccess" value="always"></param><embed allowscriptaccess="always" height="1" src="http://player.' + domain +'/player.swf?url=' + url +'&amp;enable_api=true&amp;player_type=tiny&amp;object_id=' + engineId + '" type="application/x-shockwave-flash" width="1" name="' + engineId + '"></embed></object>';
           },
@@ -231,11 +227,7 @@
           var tracks = event.playerObj.tracks;
           $.each(tracks, function(index, track) {
             var active = index === 0;
-<<<<<<< HEAD:js/sc-player.js
             $('<li>' + track.title + ', ' + timecode(track.duration) + '<a href="" class="buy">buy</a></li>').data('sc-track', {id:index}).toggleClass('active', active).appendTo($list);
-=======
-            $('<li>' + track.title + ', <span class="sc-track-duration">' + timecode(track.duration) + '</span></li>').data('sc-track', {id:index}).toggleClass('active', active).appendTo($list);
->>>>>>> b6ba514117b36af009b43cee987c7d2c55ff8524:js/sc-player.js
             if(opts.loadArtworks){
               var img = track.artwork_url ? '<img src="' + track.artwork_url.replace('-large', '-t300x300') + '"/>' : '<div class="sc-no-artwork">No Artwork</div>';
               $('<li>' + img +'</li>').appendTo($artworks).toggleClass('active', active);
